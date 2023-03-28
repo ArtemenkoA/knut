@@ -51,10 +51,10 @@ namespace knut
             string[] a = new string[table.RowCount];
             int[] b = new int[table.RowCount];
 
-            int sum_el = 0;
-            int sum_el2 = 0;
-            int first_coef = 0; 
-            int second_coef = 0;
+            double sum_el = 0;
+            double sum_el2 = 0;
+            double first_coef = 0; 
+            double second_coef = 0;
 
             for (int i = 0; i < table.RowCount - 1; i++)
             {
@@ -70,7 +70,7 @@ namespace knut
            for (int i = 0;i < b.Length; i++)
                 sum_el2 += Math.Abs(b[i] - first_coef);
 
-            second_coef = sum_el2 / b.Length;
+            second_coef = (sum_el2 / b.Length)/first_coef;
 
             
             MessageBox.Show(string.Format(Convert.ToString(second_coef).PadLeft(2, '0') + " "), "Коэффициент:");
